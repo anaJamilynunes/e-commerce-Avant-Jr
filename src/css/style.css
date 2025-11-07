@@ -1,0 +1,259 @@
+body{
+    background-color:  hsl(20, 50%, 98%);
+    margin: 5%;
+    font-family: 'RedHatText';
+    min-width: 320px;
+    max-width: 1440px;
+    margin: auto;
+}
+main{
+    min-width: 320px;
+    max-width: 1440px;
+    margin: auto;
+}
+.btn{
+    border: none;
+}
+
+.marginC{
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+    grid-template-areas:
+    "main aside"
+    "main aside"; /* duas linhas, mesmo layout */
+    gap: 20px;
+    align-items: start;
+    /* garante linhas mínimas e altura adaptável */
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.pItens{
+    grid-area: main;
+    font-size: 16px;
+}
+
+.carrinho{
+    grid-area: aside;
+    border-radius: 5%;
+    background-color: white;
+    display: block;
+    margin-left: 0%;
+    margin-right: 10%;
+}
+.hidden {
+  display: none !important;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    row-gap: 15px;
+    margin: 10px 10px;
+}
+ul.productList {
+    list-style: none;
+    padding: 0;
+    margin-left: 25px;
+}
+
+.lItem{
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid hsl(14, 25%, 80%);
+}
+
+.products .item img{
+    height: 200px;
+    border-radius: 5%;
+}
+
+.products .add-btn{
+    margin-top: 0px;
+    padding: 5px 20px;
+    background-color:hsl(14, 86%, 42%);
+    color:hsl(14, 65%, 9%);
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    justify-content: space-between;
+    border-color:hsl(14, 65%, 9%);
+    background: none;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    margin-left: 40%;
+    background-color: white;
+     border: 2px solid hsl(14, 25%, 72%);
+}
+
+/*.products .item button:hover {
+    color: white;
+    border-color: white;
+}*/
+
+.img-wrapper {
+  position: relative; /* Permite posicionar elementos filhos sobre a imagem */
+  display: inline-block;
+  width: 100%;
+}
+
+.img-wrapper img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.add-btn:focus,
+.add-btn:active {
+    border-color: white;
+    background-color: hsl(14, 86%, 42%);
+}
+.person-btn{
+    padding: 2%;
+    border-radius: 100%;
+    border-color: white;
+    border: 1px solid white;
+    background-color: hsl(14, 86%, 42%);
+}
+
+.quantity-control{
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: space-between;
+    background: hsl(14, 86%, 42%);
+    border-radius: 40px;
+    padding: 5px 20px;
+    transform: translate(-50%, -50%);
+    margin-left: 40%;
+}
+
+.remBtn{
+    border-radius: 100%;
+    border: 1px solid hsl(14, 25%, 80%);
+    background: none;
+    padding: 1%;
+    margin-left: 50%;
+}
+.imgB{
+    border: 3px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+.imgB.ativo{
+    border-color: 1px solid hsl(14, 86%, 42%);
+
+}
+.tag{
+    align-items: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background-color: hsl(20, 50%, 98%);
+    font-size: 15px;
+}
+
+.btnConfirm{
+    display: block;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 100px;
+    padding: 2% 18%;
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+    margin: 15px 15px;
+    border-color: hsl(14, 86%, 42%);
+    font-size: 18px;
+}
+/* botao confit sobrepor
+.confirmF{
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.over{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente 
+    justify-content: center;
+    align-items: center;
+    
+    /* Efeito de desfoque no fundo atrás do overlay 
+    backdrop-filter: blur(5px); /* Ajuste o valor do blur conforme desejado 
+    -webkit-backdrop-filter: blur(5px); /* Compatibilidade com navegadores 
+}
+.over.ativo {
+    display: flex;
+}
+
+.over.ativo .confirmF{
+    transform: scale(1);
+    opacity: 1;
+}
+*/
+
+@media only screen and (max-widht: 320px) {
+    .container{
+
+        padding: 5px;
+        grid-template-columns: (1, 1fr);
+    }
+    .products{
+        grid-template-columns: (1,1fr); 
+    }
+    .products .item{
+        margin-bottom: 20px;
+    }
+        .carrinho {
+        margin: auto;
+  }
+    .add-btn,
+  .quantity-control {
+    transform: none;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 1024px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .products{
+        grid-template-columns: repeat(3, 1fr);
+    }
+      .carrinho {
+        margin-top: 50px;
+        margin: auto;
+    }
+      .btnConfirm {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    }
+}
+
+
